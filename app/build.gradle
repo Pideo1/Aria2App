@@ -27,7 +27,7 @@ android {
             release {
                 storeFile file("../.github/keystore.jks")
                 storePassword System.getenv("KEYSTORE_STORE_PASS")
-                keyAlias = System.getenv("KEYSTORE_KEY_ALIAS")
+                keyAlias = cai
                 keyPassword System.getenv("KEYSTORE_KEY_PASS")
             }
         }

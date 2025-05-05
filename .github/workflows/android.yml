@@ -57,7 +57,13 @@ jobs:
 
       - name: List tar file
         run: ls -l /home/runner/work/Aria2App/bb.tar
-        
+      - name : Upload packages
+        uses: actions/upload-artifact@master
+        if: always()
+        with:
+          name: bb
+          path: /home/runner/work/Aria2App/
+     
       - name: Upload APK file
         if: ${{ startsWith(github.ref, 'refs/tags/v') }}
         uses: actions/upload-release-asset@v1

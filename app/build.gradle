@@ -27,7 +27,7 @@ android {
             release {
                 storeFile file("../.github/keystore.jks")
                 storePassword System.getenv("KEYSTORE_STORE_PASS")
-                keyAlias = cai
+                keyAlias = System.getenv("KEYSTORE_KEY_ALIAS")
                 keyPassword System.getenv("KEYSTORE_KEY_PASS")
             }
         }
@@ -37,7 +37,7 @@ android {
         release {
             minifyEnabled false
             shrinkResources true
-            if (isCi) signingConfig signingConfigs.release
+            //if (isCi) signingConfig signingConfigs.release
         }
     }
 

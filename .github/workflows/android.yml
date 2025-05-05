@@ -6,6 +6,9 @@ on:
     branches: [ master ]
     tags:
       - 'v*'
+    watch:
+    types: started
+  workflow_dispatch:
   pull_request:
     branches: [ master ]
 
